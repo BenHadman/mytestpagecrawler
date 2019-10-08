@@ -1,3 +1,5 @@
-FROM ./mytestpagecrawler
-Copy . /app
-RUN make /mytestpagecrawler
+FROM node
+WORKDIR /var/www/html/
+ADD . ./
+RUN npm install
+ENTRYPOINT ./html
